@@ -2,12 +2,33 @@
 layout: default
 title: Blog
 ---
-<ul>
+<link rel="stylesheet" href="/assets/css/index.css">
+<ul class="post-list">
     {% for post in site.posts %}
     <li class="post">
-        <a href="{{ site.baseurl }}{{ post.url }}" target="_blank"><div>
-            <header>{{ post.title }}</header>
-            <time>{{ post.date | date_to_string }}</time>
+        <a href="{{ site.baseurl }}{{ post.url }}"><div>
+            <header style="background: {{ post.color }}">
+                <h3 class="title">{{ post.title }}</h3>
+                <p class="introduction">{{ post.introduction }}</p>
+            </header>
+            <footer>
+                <p class="category">
+                    <object data="assets/img/cate.svg" class="category-icon"></object>
+                    {% for category in post.categories %}
+                    <span>{{ category }}</span>
+                    {% endfor %}
+                </p>
+                <p class="category">
+                    <object data="assets/img/tag.svg" class="tag-icon"></object>
+                    {% for tag in post.tags %}
+                    <span>{{ tag }}</span>
+                    {% endfor %}
+                </p>
+                <p class="time">
+                    <object data="assets/img/time.svg" class="time-icon"></object>
+                    <time>{{ post.date | date: "%Y-%m-%d" }}</time>
+                </p>
+            </footer>
         </div></a>
     </li>
     {% endfor %}

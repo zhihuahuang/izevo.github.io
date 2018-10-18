@@ -4,13 +4,13 @@
 
 ```html
 <style>
-	#main {
+    #main {
         color: red;
-	}
-	
-	.text {
+    }
+
+    .text {
         color: yellow;
-	}
+    }
 </style>
 <p id="main" class="text">Hello World</p>
 ```
@@ -19,13 +19,13 @@
 
 ```html
 <style>
-	p[data-text="hello"] {
+    p[data-text="hello"] {
         color: red;
-	}
-	
-	.text {
+    }
+
+    .text {
         color: yellow;
-	}
+    }
 </style>
 <p id="main" class="text" data-text="hello">Hello World</p>
 ```
@@ -46,14 +46,14 @@ CSS Specificity 是**从左到右依次比较**；左边的值越大，CSS Speci
 
 ```html
 <style>
-	p[data-text="hello"] {
+    p[data-text="hello"] {
         color: red;
-	}
+    }
     /* 有一个元素选择器 p，和一个属性选择器 [data-text="hello"]，所以 CSS Specificity 的值为 0,1,1 */
-	
-	.text {
+    
+    .text {
         color: yellow;
-	}
+    }
     /* 只有一个类选择器 .text，所以 CSS Specificity 的值为 0,1,0 */
     
     /* 因为 0,1,1 > 0,1,0，所以最终文字的颜色为红色 */
@@ -63,12 +63,12 @@ CSS Specificity 是**从左到右依次比较**；左边的值越大，CSS Speci
 
 ## CSS 优先级
 
-所以结合下来，CSS 优先级从高到低依次为：
+结合以前学习 CSS 的知识，我们来总结一下，CSS 优先级从高到低依次为：
 
 1. `!important` 样式
 2. 内联样式
 3. CSS Specificity 值大的样式
-4. 覆盖的样式
+4. CSS Specificity 相同，但靠后的样式
 
 ## 一些特殊情况
 
@@ -78,27 +78,27 @@ CSS Specificity 是**从左到右依次比较**；左边的值越大，CSS Speci
 
    ```html
    <style>
-   	.text:not(span) {
+       .text:not(span) {
            color: red;
-   	}
-   	/* 有一个元素选择器 span，和一个类选择器 .text，所以 CSS Specificity 的值为 0,1,1 */
+       }
+       /* 有一个元素选择器 span，和一个类选择器 .text，所以 CSS Specificity 的值为 0,1,1 */
    </style>
    ```
 
 3. `[id="main"]` 这样的写法是**属性选择器**，而不是 id 选择器。
 
-4. 由于覆盖的原因，所以元素自身的样式 > 继承的样式。
+4. 元素自身的样式 > 继承的样式。
 
    ```html
    <style>
        #main {
            color: red;
-   	}
+       }
        /* 有一个 id 选择器 #main, 所以 CSS Specificity 的值为 1,0,0 */
-   	
-   	p {
+       
+       p {
            color: yellow;
-   	}
+       }
        /* 只有一个元素选择器 p，所以 CSS Specificity 的值为 0,0,1 */
        
        /* 因为自身的样式会覆盖继承的样式，所以文字的颜色为黄色 */
