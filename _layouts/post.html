@@ -2,4 +2,11 @@
 layout: default
 ---
 <link rel="stylesheet" href="/assets/css/post.css">
-<div class="post">{{content}}</div>
+<div class="post">
+    <article>{{content}}</article>
+    <footer id="post-copyright">
+        <p>如有错误，请提出指正：<a href="https://github.com/zhihuahuang/zhihuahuang.github.io/issues">https://github.com/zhihuahuang/zhihuahuang.github.io/issues</a></p>
+        <p>如若侵权，请联系邮箱：<a href="mailto://huangzhihua@inthis.net">huangzhihua@inthis.net</a></p>
+        <p>如需转载，请注明出处：<a href="{{site.url}}{{page.url}}">{{site.url}}{{page.url}}</a></p>
+    </footer>
+</div>

@@ -60,12 +60,12 @@ input[type=hidden i] { display: none !important; }
 
 ```html
 <style>
-	#input {
+    #input {
         display: block !important;
         width: 100px;
         height: 100px;
         background: red;
-	}
+    }
 </style>
 <input id="input" type="hidden" />
 ```
@@ -199,13 +199,13 @@ input[type=hidden i] { display: none !important; }
 
 ```html
 <style>
-	* {
+    * {
         color: black;
-	}
-	
-	p {
+    }
+    
+    p {
         color: red;
-	}
+    }
 </style>
 <p>Hello <span>World</span>!</p>
 ```

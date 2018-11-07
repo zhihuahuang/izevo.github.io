@@ -101,7 +101,7 @@ div p span {
 
 ```html
 <div>
-	<p><b>Strong</b></p>
+    <p><b>Strong</b></p>
 </div>
 ```
 
