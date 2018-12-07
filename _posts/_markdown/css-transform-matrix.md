@@ -56,6 +56,7 @@ matrix(1, 0, 0, 1, 30.2328, 15.1164)
 **矩阵**是线性代数中的重要元素，如果你没有接触过相关知识。你可以把矩阵简单的理解为一个表格。
 
 2D 的变换矩阵可以表示为：
+
 $$
 \begin{bmatrix}
 a & c & e\\ 
@@ -71,6 +72,7 @@ $$
 #### 变换
 
 2D 变换其实本质是一个坐标点 *P* 变成一个新坐标点 *P'* 的过程。
+
 $$
 P(x,y)\rightarrow P'(x',y')
 $$
@@ -88,6 +90,7 @@ $$
 - 新坐标点 *P'* 的纵坐标 *y'* 由 *b*，*d*，*f* 决定。
 
 用矩阵乘法表示为：
+
 $$
 \begin{bmatrix}
 a & c & e\\ 
@@ -127,6 +130,7 @@ transform-origin: left top; // 设置变换的基点为左上角。
 ![element](https://zhihuahuang.github.io/assets/post/css-transform-matrix/element.png)
 
 很容易写出转换的公式，公式为：
+
 $$
 \left\{\begin{matrix}
 x'=x+100 \\ 
@@ -134,7 +138,8 @@ y'=y+50
 \end{matrix}\right.
 $$
 
- 等价于
+等价于
+
 $$
 \left\{\begin{matrix}
 x'=1*x+0*y+100 \\ 
@@ -231,26 +236,34 @@ $$
 \theta  =\angle A,O,A'=60^{\circ}=\frac{\pi}{3}\\
 r=AO=A'O
 $$
+
 可以得到：
+
 $$
 \left\{\begin{matrix}
 x'=\cos\left(\alpha +\theta \right )*r\\
 y'=\sin\left(\alpha +\theta \right )*r
 \end{matrix}\right.
 $$
+
 可以用三角函数和角公式展开：
+
 $$
 \sin \left ( \alpha + \beta  \right ) = \sin \alpha \cos \beta + \cos \alpha \sin \beta\\
 \cos \left ( \alpha + \beta  \right ) = \cos \alpha \cos \beta - \sin \alpha \sin \beta
 $$
+
 得：
+
 $$
 \left\{\begin{matrix}
 x'=\cos \alpha \cos \theta * r - \sin \alpha \sin \theta * r = \cos \theta * x - \sin \theta * y\\
 y'=\sin \alpha \cos \theta * r + \cos \alpha \sin \theta * r = \cos \theta * y + \sin \theta * x
 \end{matrix}\right.
 $$
+
 整理后公式等价为：
+
 $$
 \left\{\begin{matrix}
 x'= \cos \theta * x - \sin \theta * y + 0\\
@@ -282,12 +295,14 @@ transform: matrix(cos(angle), sin(angle), -sin(angle), cos(angle), 0, 0);
 ### 4. 拉伸 skew
 
 拉伸的公司比较特别，这里直接给出公式
+
 $$
 \left\{\begin{matrix}
 x'= x+\tan (\theta x) * y + 0\\
 y'= \tan\left( \theta y\right) * x + y + 0
 \end{matrix}\right.
 $$
+
 所以下面的 CSS 是等价的：
 
 ```css
@@ -335,6 +350,7 @@ $$
 ### 向下兼容 2D矩阵
 
 3D 矩阵其实可以兼容 2D 矩阵。在 2D 变换中，z 的值为 0（或 -0）。w 值为 1。
+
 $$
 \begin{bmatrix}
 m11 & m21 & m31 & m41\\ 

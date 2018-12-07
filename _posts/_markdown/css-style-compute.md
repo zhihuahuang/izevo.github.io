@@ -219,7 +219,8 @@ input[type=hidden i] { display: none !important; }
 
 ## 参考资料
 
-1. [CSS：层叠样式表 > 优先级](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
-2. [Selectors Level 3#specificity](https://www.w3.org/TR/selectors-3/#specificity)
-3. [A Specificity Battle! (and other trickery)](https://css-tricks.com/a-specificity-battle/)
-4. 《CSS 权威指南（第三版）》
+1. [图解CSS：CSS层叠和继承](https://www.w3cplus.com/css/Illustrated-CSS-details-and-cases-chr2-cascade-and-inherit.html)
+2. [CSS：层叠样式表 > 优先级](https://developer.mozilla.org/zh-CN/docs/Web/CSS/Specificity)
+3. [Selectors Level 3#specificity](https://www.w3.org/TR/selectors-3/#specificity)
+4. [A Specificity Battle! (and other trickery)](https://css-tricks.com/a-specificity-battle/)
+5. 《CSS 权威指南（第三版）》

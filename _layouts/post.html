@@ -1,7 +1,15 @@
 ---
 layout: default
 ---
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" async></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: "none",
+        showMathMenu: false,
+        showMathMenuMSIE: false
+    });
+</script>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS_CHTML"></script>
 <link rel="stylesheet" href="/assets/css/post.css">
 <link rel="stylesheet" media="screen and (max-width: 1024px)" href="/assets/css/post.mobile.css">
 <div class="post">
