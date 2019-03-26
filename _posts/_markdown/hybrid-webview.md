@@ -1,4 +1,4 @@
-# Hybrid **WebView** 技术总结
+# Hybrid WebView 技术总结
 
 Hybrid WebView 技术是一种在 App 客户端（通常称为Native）上使用 WebView 展示 Web H5 网页的技术。这些 H5 通常由操作 Native 的能力，所以 H5 需要与 Native 进行通讯。它可以分为两个部分，一部分是 JS 向 Native 发送数据，一部分是 Native 向网页发送数据。
 
@@ -23,7 +23,7 @@ Android 是通过重写 [onConsoleMessage](https://developer.android.com/referen
 // Java 代码
 @Override
 public void onConsoleMessage(String message, int lineNumber, String sourceID) {
-	// message 即为 JS 传过来的消息，判断消息来决定调用方法
+    // message 即为 JS 传过来的消息，判断消息来决定调用方法
 }
 ```
 
@@ -47,8 +47,8 @@ Android 是重写 [onJsPrompt](https://developer.android.com/reference/android/w
 @Override       
 public boolean onJsPrompt(WebView view, String url, String message, String defaultValue, JsPromptResult result) {
     // message 即为 JS 传过来的消息
-	result.confirm('returnValue'); // 这里代表点击了确定，同理 result.cancel() 代表点击了取消。confirm 可以传入返回值。
-	return true;
+    result.confirm('returnValue'); // 这里代表点击了确定，同理 result.cancel() 代表点击了取消。confirm 可以传入返回值。
+    return true;
 } 
 ```
 
@@ -74,7 +74,7 @@ iframe.src = 'appschema://toast?message=test';
 ```java
 // Java
 public boolean shouldOverrideUrlLoading(WebView view, String url) {
-	// url 为传入的消息
+    // url 为传入的消息
     return true;
 }
 ```
@@ -149,9 +149,10 @@ webview.evaluateJavascript("Math.abs(-5)", new ValueCallback<String>() {
 
 ### iOS
 
-```objective-c
+```objectc
 // Object-C 代码
-JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"]; //首先创建JSContext 对象（此处通过当前 webView 的键获取到 jscontext）
+// 首先创建JSContext 对象（此处通过当前 webView 的键获取到 jscontext）
+JSContext *context=[webView valueForKeyPath:@"documentView.webView.mainFrame.javaScriptContext"];
 NSString *js=@"alert('test')"; //准备执行的 js 代码
 [context evaluateScript:js]; //通过 object-c 调用js
 ```
